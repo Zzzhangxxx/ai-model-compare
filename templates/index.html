@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 模型对比评测平台 | Model Comparator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>AI 模型对比评测平台</h1>
+            <p class="subtitle">同时对比多个 AI 大模型的响应质量、速度和效果</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="models-panel">
+            <h2>可用模型</h2>
+            <div id="modelList" class="model-list">
+                <div class="loading">加载中...</div>
+            </div>
+        </section>
+
+        <section class="input-panel">
+            <h2>对比配置</h2>
+
+            <div class="form-group">
+                <label for="category">预设场景</label>
+                <select id="category">
+                    <option value="custom">自定义</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="systemPrompt">系统提示词（可选）</label>
+                <textarea id="systemPrompt" rows="2" placeholder="设定 AI 的角色和行为..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="prompt">提示词</label>
+                <textarea id="prompt" rows="4" placeholder="输入你想对比的提示词..."></textarea>
+            </div>
+
+            <button id="compareBtn" class="btn-primary">开始对比</button>
+            <span id="statusText" class="status-text"></span>
+        </section>
+
+        <section class="results-panel" id="resultsPanel" style="display:none;">
+            <h2>对比结果</h2>
+            <div id="resultsContainer"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Powered by Xiaomi MiMo · OpenAI · DeepSeek | AI Model Comparator v1.0</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
